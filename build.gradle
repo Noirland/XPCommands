@@ -1,0 +1,30 @@
+group 'nz.co.noirland'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        name "spigot"
+        url "https://hub.spigotmc.org/nexus/content/groups/public/"
+    }
+}
+
+dependencies {
+    compile 'org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT'
+    compile 'nz.co.noirland:zephcore:3.2.5'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+processResources {
+    filter ReplaceTokens, tokens : [
+            "version": project.version
+    ]
+}

@@ -1,0 +1,20 @@
+author: ZephireNZ
+database: false
+main: nz.co.noirland.xpcommands.XPCommands
+name: XPCommands
+startup: postworld
+version: @version@
+depend:
+- ZephCore
+commands:
+  xpexec:
+    description: Execute a command only if player can pay with XP
+    usage: /<command> [xp] [player] [command...]
+    permission: xpcommands.xpexec
+permissions:
+  xpcommands.xpexec:
+    description: Gives access to xpexec command
+    default: op
+  xpcommands.bypass:
+    description: Bypasses all costs for commands
+    default: op
